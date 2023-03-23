@@ -1,0 +1,34 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(https://images.pexels.com/photos/3856635/pexels-photo-3856635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    // Tim Grundtner
+    background-position: center;
+    background-size: cover;
+    cursor: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+    
+    #cursor {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 12rem;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        background-color: var(--clr-neutral-100);
+        display: grid;
+        place-content: center;
+        
+        .outer-text {
+            position: absolute;
+            top: 125%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            color: var(--clr-neutral-100);
+        }
+    }
+    
+}

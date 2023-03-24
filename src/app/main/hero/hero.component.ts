@@ -16,8 +16,6 @@ export class HeroComponent implements OnInit {
     const cursor = document.querySelector('#cursor') as HTMLElement;
     const hero = document.querySelector('.hero') as HTMLElement;
 
-
-
     hero.onmouseenter = e => {
       gsap.to(cursor, {
         top: e.clientY + 'px',
@@ -29,10 +27,9 @@ export class HeroComponent implements OnInit {
 
     hero.onmousemove = e => {
       gsap.to(cursor, {
-        top: e.clientY + 'px',
-        left: e.clientX + 'px'
+        top: e.pageY + 'px',
+        left: e.pageX + 'px'
       });
-      console.log('on move')
     }
 
     
@@ -45,7 +42,6 @@ export class HeroComponent implements OnInit {
           ease: 'power1.in',
         })
       ), 300)
-     
     }
   }
 

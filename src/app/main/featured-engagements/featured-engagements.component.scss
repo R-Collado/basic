@@ -1,0 +1,72 @@
+.bar {
+    padding: 8rem 8rem;
+
+    .line {
+        height: 2px;
+        width: 100%;
+        background-color: var(--clr-neutral-900);
+        margin-bottom: 1rem;
+    }
+
+    .underbar {
+        display: flex;
+        justify-content: space-between;
+    
+        .numbers {
+            display: flex;
+            gap: 35rem;
+            font-size: 1.4rem;
+        }
+
+        .dot {
+            height: 1rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: var(--clr-neutral-900);
+        }
+    }
+}
+
+.featured-engagements {
+    padding: 8rem 8rem;
+    overflow-x: hidden;
+
+    h2 {
+        font-size: 4.2rem;
+        font-weight: 700;
+        max-width: 10ch;
+        line-height: 1;
+        margin-bottom: 12rem;
+    }
+
+
+    .slider-container {
+        position: relative;
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            gap: 5rem;
+            width: calc(100% + ( 5rem * 5));
+
+            transition: left 750ms ease-out;
+        }
+
+        .card-img {
+            position: relative;
+    
+            &::before {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                height: 2px;
+                width: 2rem;
+                background-color: var(--clr-neutral-900);
+            }
+        } 
+    }
+    
+}

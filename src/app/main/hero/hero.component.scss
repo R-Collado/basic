@@ -2,6 +2,7 @@
     position: relative;
     height: 100vh;
     width: 100vw;
+    max-width: 100%;
     background-image: url(https://images.pexels.com/photos/3856635/pexels-photo-3856635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
     // Tim Grundtner
     background-position: center;
@@ -9,6 +10,7 @@
     cursor: none;
     font-size: 1.4rem;
     font-weight: 600;
+    overflow: hidden;
     
     #cursor {
         position: absolute;
@@ -21,7 +23,7 @@
         background-color: var(--clr-neutral-100);
         display: grid;
         place-content: center;
-        
+
         .outer-text {
             position: absolute;
             top: 125%;
@@ -30,5 +32,4 @@
             color: var(--clr-neutral-100);
         }
     }
-    
 }

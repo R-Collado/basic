@@ -29,7 +29,6 @@
 
 .featured-engagements {
     padding: 8rem 8rem;
-    overflow-x: hidden;
 
     h2 {
         font-size: 4.2rem;
@@ -44,29 +43,59 @@
         position: relative;
 
         .slider {
-            position: absolute;
-            top: 0;
-            left: 0;
             display: flex;
             gap: 5rem;
-            width: calc(100% + ( 5rem * 5));
+            width: calc(150% + ( 5rem * 5));
 
-            transition: left 750ms ease-out;
+            transition: transform 450ms ease-out;
+
+            .slider-card {
+                padding-bottom: 5rem;
+
+                .card-img {
+                    position: relative;
+                    margin-bottom: 10rem;
+    
+                    max-width: 15rem;
+            
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 7rem;
+                        left: 0;
+                        height: 2px;
+                        width: 2rem;
+                        background-color: var(--clr-neutral-900);
+                    }
+                } 
+    
+                .brand-name {
+                    font-weight: 700;
+                    font-size: 2.2rem;
+                    margin-bottom: 1.5rem;
+                }   
+            }           
         }
 
-        .card-img {
-            position: relative;
-    
-            &::before {
+        .slider-controller-outside {
+            position: absolute;
+            top: 95%;
+            left: 0%;
+            width: 100%;
+            height: 3px;
+            background-color: #93908a;
+
+            .slider-controller-inside {
                 content: '';
                 position: absolute;
-                top: 100%;
+                top: 0%;
                 left: 0;
-                height: 2px;
-                width: 2rem;
+                width: 65%;
+                height: 3px;
                 background-color: var(--clr-neutral-900);
+                transition: left 250ms ease-in;
             }
-        } 
+        }      
     }
     
 }

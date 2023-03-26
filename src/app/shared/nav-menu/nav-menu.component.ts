@@ -14,6 +14,8 @@ export class NavMenuComponent implements OnInit {
     const menu = document.querySelector('.nav-menu') as HTMLElement;
     const menuBg = document.querySelector('.nav-menu .bg') as HTMLElement;
 
+    if (this.isSafariBrowser()) menuBg.classList.add('safari_only');
+
     window.onwheel = e => {
 
       if (e.deltaY > 0) {
@@ -39,4 +41,5 @@ export class NavMenuComponent implements OnInit {
 
   }
 
+  isSafariBrowser = () => navigator.userAgent.indexOf('Safari') > -1 && navigator.userAgent.indexOf('Chrome') <= -1;
 }

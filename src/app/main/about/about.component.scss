@@ -26,6 +26,7 @@
                 margin-block: 5rem 8rem;
                 cursor: pointer;
                 overflow: hidden;
+                -webkit-mask-image: -webkit-radial-gradient(white, black);
                 transition: color 250ms ease-in;
 
                 &::before {

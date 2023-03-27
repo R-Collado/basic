@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import gsap from 'gsap';
 
 @Component({
   selector: 'app-featured-engagements',
@@ -14,35 +15,86 @@ export class FeaturedEngagementsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.screenWidth)
 
     const sliderContainer = document.querySelector('.slider-container') as HTMLElement;
     const slider = document.querySelector('.slider') as HTMLElement;
     const sliderController = document.querySelector('.slider-controller-inside') as HTMLElement;
+    const cursor = document.querySelector('.slider-container .cursor') as HTMLElement;
+    let translate = 0;
+
+
 
     sliderContainer.onmousedown = e => {
-      const actualX = e.clientX;
+      let actualX = e.clientX;
       this.listenMouse = true;
-      console.log('actual', actualX)
+      cursor.classList.add('pressed');
 
       sliderContainer.onmousemove = e => {
         const movement = e.clientX;
+        const rect = sliderContainer.getBoundingClientRect();
+
+        gsap.to(cursor, {
+          left:  e.clientX - rect.left + 'px',
+          top: e.clientY - rect.top + 'px',
+        });
 
         if(!this.listenMouse) return;
+        
+        if (movement > actualX) translate++;
+        else translate--
 
-        if (movement > actualX) console.log('bigger')
-        else console.log('smaller')
+        if (translate > 0 ) translate = 0;
+        else if (translate < -45) translate = -45;
 
+        gsap.to(slider, {
+          xPercent: translate,
+          duration: .5
+        });
 
-        // this.xCoord = e.clientX;
-        // const percentage = Math.round(this.xCoord / sliderContainer.clientWidth * (100));
-        // console.log(percentage - 65)
-        // slider.style.transform = `translateX(${percentage - 65}%)`;
+        gsap.to(sliderController, {
+          xPercent: -translate,
+          duration: .5
+        })
+
+        actualX = e.clientX;
       }
     }
 
     sliderContainer.onmouseup = e => {
       this.listenMouse = false;
+      cursor.classList.remove('pressed');
+
+    }
+
+    sliderContainer.onmouseenter = e => {
+      const rect = sliderContainer.getBoundingClientRect();
+
+      gsap.to(cursor, {
+        left:  e.clientX - rect.left + 'px',
+        top: e.clientY - rect.top + 'px',
+        duration: .1,
+        ease: 'power1.in'
+      });
+    }
+
+    sliderContainer.onmouseleave = e => {
+      setTimeout(()=> (
+        gsap.to(cursor , {
+          top: '30%',
+          left: '90%',
+          duration: .2,
+          ease: 'power1.in',
+        })
+      ), 300)
+    }
+
+    sliderContainer.onmousemove = e => {
+      const rect = sliderContainer.getBoundingClientRect();
+
+      gsap.to(cursor, {
+        left:  e.clientX - rect.left + 'px',
+        top: e.clientY - rect.top + 'px',
+      });
     }
   }
 

@@ -27,8 +27,8 @@ export class HeroComponent implements OnInit {
 
     hero.onmousemove = e => {
       gsap.to(cursor, {
-        top: e.pageY + 'px',
-        left: e.pageX + 'px'
+        top: e.clientY + 'px',
+        left: e.clientX + 'px'
       });
     }
 

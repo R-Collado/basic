@@ -99,4 +99,20 @@
             background-color: var(--clr-neutral-100);
         }
     }
+
+    @media (max-width: 1000px) {
+        width: 10px;
+
+        .nav-menu-list {
+            display: none;
+        }
+
+        .nav-menu-icon {
+            display: none;
+        }
+
+        .bg {
+            opacity: 0;
+        }
+    }
 }

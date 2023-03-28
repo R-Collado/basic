@@ -1,0 +1,86 @@
+.footer {
+    padding: 8rem 8rem;
+    background: var(--clr-neutral-900);
+    color: var(--clr-neutral-100);
+
+    .higher {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+
+        .logo {
+            width: 7rem;
+
+            path {
+                fill: var(--clr-neutral-100);
+            }
+        }
+
+        .cta-text {
+            font-size: 3.2rem;
+            max-width: 25ch;
+            line-height: 1;
+
+            span {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .lower {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10rem;
+
+        .email-input {
+            background: transparent;
+            color: var(--clr-neutral-100);
+            border: 0;
+            border-bottom: 1px solid var(--clr-neutral-100);
+            padding-bottom: 1.5rem;
+            width: 40rem;
+            outline: none;
+        }
+
+        svg {
+            cursor: pointer;
+            transform: translate(-100%, 20%);
+            path {
+                fill: var(--clr-neutral-100);
+            }
+        }
+        
+        .footer-heading {
+            font-size: 1.8rem;
+            font-weight: 400;
+            position: relative;
+            margin-left: 2rem;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: -22px;
+                width: 1rem;
+                aspect-ratio: 1 / 1;
+                border-radius: 50%;
+                background-color: var(--clr-neutral-100);
+                transform: translateY(-50%);
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                cursor: pointer;
+                font-size: 1.8rem;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

@@ -23,6 +23,8 @@
         background-color: var(--clr-neutral-100);
         display: grid;
         place-content: center;
+        filter: blur(.4px);
+
 
         .outer-text {
             position: absolute;

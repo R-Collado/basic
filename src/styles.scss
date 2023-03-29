@@ -172,3 +172,71 @@ body {
 		}
 	}
 }
+
+
+.cursor-primary-clr {
+	position: absolute;
+	top: 30%;
+	left: 90%;
+	width: 10rem;
+	aspect-ratio: 1 / 1;
+	background-color: var(--clr-primary);
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	display: grid;
+	place-content: center;
+	z-index: 500;
+	filter: blur(.6px);
+	
+	transition: width 300ms ease-in;
+
+	p {
+		font-weight: 700;
+		font-size: 1.2rem;
+		user-select: none;
+		color: var(--clr-neutral-900);
+		transition: opacity 150ms ease-in;
+	}
+
+	&::before,
+	&::after {
+		position: absolute;
+		top: 50%;
+		color: var(--clr-primary);
+		font-size: 3rem;
+		font-weight: 900;
+		opacity: 0;
+		z-index: -1;
+		transform: translateY(-50%);
+		transition: 
+			right 150ms ease-in,
+			left 150ms ease-in;
+	}
+
+	&::before {
+		content: '\2039';
+		right: 50%;
+	}
+
+	&::after {
+		content: '\203A';
+		left: 50%;
+	}
+
+	&.pressed {
+		width: 8rem;
+
+		p {
+			opacity: 0;
+		}
+
+		&::before {
+			opacity: 1;
+			right: 120%;
+		}
+		&::after {
+			opacity: 1;
+			left: 120%;
+		}
+	}
+}

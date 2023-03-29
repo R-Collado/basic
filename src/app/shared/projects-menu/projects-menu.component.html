@@ -1,0 +1,43 @@
+<div class="projects">
+    <div class="top-side">
+        <div class="dot"></div>
+        <div>
+            <p>(5) INTERNAL WORKS</p>
+            <p>©  c/o BASIC/DEPT®</p>
+        </div>
+        <div>
+            <p>A COLLECTION OF INTERNAL PROJECT AND INITATIVES UNDER THE</p>
+            <p>BASIC/DEPT® BRAND.</p>
+        </div>
+
+        <div class="cross-btn" (click)="toggleSeeProjects()">
+            <svg class="cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
+        </div>
+    </div>
+
+    <div class="slider-container">
+        <div class="cursor-primary-clr" >
+            <p>DRAG</p>
+        </div>
+        <ul class="project-list">
+            <li class="project" *ngFor="let project of projects">
+                <p class="index">{{ project.idx }}</p>
+                <div class="img">
+                    <img [src]="project.img">
+                </div>
+                <div class="text">
+                    <header class="header">
+                        <p class="name">{{ project.name }}</p>
+                        <p class="year">c {{ project.year }}</p>
+                    </header>
+                    <p class="catchphrase">{{ project.catchphrase }}</p>
+                    <p class="summary">
+                        {{ project.summary }}
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+   
+
+</div>

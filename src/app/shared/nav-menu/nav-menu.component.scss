@@ -8,7 +8,7 @@
     align-items: center;
     padding: 4.5rem 8rem;
     color: var(--clr-neutral-900);
-    z-index: 1000;
+    z-index: 999;
     background: var(--clr-neutral-100);
     overflow: hidden;
     
@@ -69,10 +69,21 @@
         gap: .5rem;
 
         .nav-menu-icon-dot {
-            height: .75rem;
+            height: .65rem;
             aspect-ratio: 1 / 1;
             border-radius: 50%;
             background-color: var(--clr-neutral-900);
+            transition: transform 150ms ease-in;
+        }
+
+        &:hover {
+           .nav-menu-icon-dot:first-of-type {
+                transform: translateX(-50%);
+           }
+
+           .nav-menu-icon-dot:last-of-type {
+                transform: translateX(50%);
+            }
         }
     }
 

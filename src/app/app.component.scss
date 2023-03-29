@@ -1,0 +1,63 @@
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--clr-neutral-100);
+    z-index: 1000;
+    place-content: center;
+    animation: moveUpDelayed 1000ms linear;
+    display: grid;
+    transform: translateY(-100%);
+    cursor: none;
+
+    p {
+        font-size: 20rem;
+        font-weight: 900;
+        line-height: 1;
+        position: relative;
+
+        span {
+            font-size: 5rem;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: var(--clr-neutral-100);
+            overflow: hidden;
+            animation: moveUp 500ms linear;
+        }
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(100%)
+    }
+
+    100%{
+        transform: translateY(0)
+    }
+}
+
+@keyframes moveUpDelayed {
+    0% {
+        transform: translateY(0%)
+    }
+
+    50% {
+        transform: translateY(0%)
+    }
+
+    100%{
+        transform: translateY(-100%)
+    }
+}

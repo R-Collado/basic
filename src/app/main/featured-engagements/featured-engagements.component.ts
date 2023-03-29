@@ -19,7 +19,7 @@ export class FeaturedEngagementsComponent implements OnInit {
     const sliderContainer = document.querySelector('.slider-container') as HTMLElement;
     const slider = document.querySelector('.slider') as HTMLElement;
     const sliderController = document.querySelector('.slider-controller-inside') as HTMLElement;
-    const cursor = document.querySelector('.slider-container .cursor') as HTMLElement;
+    const cursor = document.querySelector('.slider-container .cursor-primary-clr') as HTMLElement;
     let translate = 0;
 
 
@@ -63,7 +63,6 @@ export class FeaturedEngagementsComponent implements OnInit {
     sliderContainer.onmouseup = e => {
       this.listenMouse = false;
       cursor.classList.remove('pressed');
-
     }
 
     sliderContainer.onmouseenter = e => {

@@ -11,9 +11,12 @@
         <li>CAREERS</li>
         <li>CONTACT</li>
     </ul>
-    <div class="nav-menu-icon">
+    <div class="nav-menu-icon" (click)="toggleProjectsList()">
         <div class="nav-menu-icon-dot"></div>
         <div class="nav-menu-icon-dot"></div>
         <div class="nav-menu-icon-dot"></div>
     </div>
 </nav>
+<div *ngIf="seeProjects" class="projects">
+    <app-projects-menu (closeProjectsList)="toggleProjectsList($event)"></app-projects-menu>
+</div>

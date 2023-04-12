@@ -74,11 +74,6 @@ export class ProjectsMenuComponent implements OnInit {
         const movement = e.clientX;
         const rect =  projectList.getBoundingClientRect();
 
-        gsap.to(cursor, {
-          left:  e.clientX - rect.left + 'px',
-          top: e.clientY - rect.top + 'px',
-        });
-
         if(!this.listenMouse) return;
         
         if (movement > actualX) translate++;

@@ -125,12 +125,12 @@
                     }
                 }
             }
-
-            // & + * {
-            //     border-right: 3px solid rosybrown;
-            // }
         }
     }
+}
+
+.cursor-primary-clr {
+    pointer-events: none;
 }
 
 @keyframes appear {

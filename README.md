@@ -1,6 +1,6 @@
 # Basic
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+This is a project that I made based on a real life case and design. I tried to give it my own twist but it was made basically to test my frontend skills.
 
 ## Development server
 

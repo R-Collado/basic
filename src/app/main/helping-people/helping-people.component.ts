@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 
 @Component({
-  selector: 'app-agency-spotlight',
-  templateUrl: './agency-spotlight.component.html',
-  styleUrls: ['./agency-spotlight.component.scss']
+  selector: 'app-helping-people',
+  templateUrl: './helping-people.component.html',
+  styleUrls: ['./helping-people.component.scss']
 })
-export class AgencySpotlightComponent implements OnInit {
+export class HelpingPeopleComponent implements OnInit {
 
   constructor() { }
 
@@ -24,5 +22,4 @@ export class AgencySpotlightComponent implements OnInit {
       video.play();
     }
   }
-
 }

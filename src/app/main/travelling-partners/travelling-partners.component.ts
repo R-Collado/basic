@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import gsap from 'gsap';
 
 @Component({
-  selector: 'app-featured-engagements',
-  templateUrl: './featured-engagements.component.html',
-  styleUrls: ['./featured-engagements.component.scss']
+  selector: 'app-travelling-partners',
+  templateUrl: './travelling-partners.component.html',
+  styleUrls: ['./travelling-partners.component.scss']
 })
-export class FeaturedEngagementsComponent implements OnInit {
+export class TravellingPartnersComponent implements OnInit {
   
   listenMouse: boolean = false;
   xCoord: number = 0;

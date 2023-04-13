@@ -10,7 +10,7 @@ import { ProjectsMenuComponent } from './projects-menu/projects-menu.component';
   declarations: [
     NavMenuComponent,
     FooterComponent,
-    ProjectsMenuComponent
+    ProjectsMenuComponent,
   ],
   imports: [
     CommonModule

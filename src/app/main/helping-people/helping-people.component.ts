@@ -10,7 +10,6 @@ export class HelpingPeopleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    gsap.registerPlugin(ScrollTrigger);
     this.playVideo();
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import gsap from 'gsap';
 
 @Component({
@@ -6,17 +6,33 @@ import gsap from 'gsap';
   templateUrl: './nav-menu.component.html',
   styleUrls: ['./nav-menu.component.scss']
 })
-export class NavMenuComponent implements OnInit {
+export class NavMenuComponent implements OnInit, AfterViewInit {
   
   seeProjects: boolean = false;
+  seeMobileMenu: boolean = false;
+  isMobile!: boolean;
+
+  @ViewChild('navMenuDesktop') navMenuDesktop!: ElementRef;
+  @ViewChild('navMenuBg') navMenuBg!: ElementRef;
+  @ViewChild('menuMobileLinkList') menuMobileLinkList!: ElementRef;
+
+  
 
   constructor() { }
 
   ngOnInit(): void {
-    const menu = document.querySelector('.nav-menu') as HTMLElement;
-    const menuBg = document.querySelector('.nav-menu .bg') as HTMLElement;
+  }
 
-    if (this.isSafariBrowser()) menuBg.classList.add('safari_only');
+  ngAfterViewInit(): void {
+    this.loadEventListeners();
+    this.checkIfMobile();
+
+    if (this.isSafariBrowser()) this.navMenuBg.nativeElement.classList.add('safari_only');
+  }
+
+  
+  loadEventListeners(): void {
+    const menu = this.navMenuDesktop.nativeElement;
 
     window.onwheel = e => {
 
@@ -29,7 +45,6 @@ export class NavMenuComponent implements OnInit {
         });
         setTimeout(() => {
           menu.dataset['transparent'] = 'false';
-          menuBg.style.display = 'block';
         }, 500);
       } else {
         //scroll up
@@ -41,6 +56,9 @@ export class NavMenuComponent implements OnInit {
       }
     }
 
+    window.onresize = e => {
+      this.checkIfMobile();
+    }
   }
 
   isSafariBrowser = () => navigator.userAgent.indexOf('Safari') > -1 && navigator.userAgent.indexOf('Chrome') <= -1;
@@ -73,5 +91,17 @@ export class NavMenuComponent implements OnInit {
       duration: .5,
       ease: 'power1.in'
     })
+  }
+
+  checkIfMobile(): void {
+    if (window.innerWidth > 1280) this.isMobile = false;
+    else this.isMobile = true;
+  }
+
+  toggleLinkList(): void {
+    console.log('clicked')
+    const mobileLinkList = this.menuMobileLinkList.nativeElement;
+
+    mobileLinkList.classList.toggle('active');
   }
 }

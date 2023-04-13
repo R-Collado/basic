@@ -1,5 +1,8 @@
-<nav class="nav-menu" data-transparent="true">
-    <div class="bg"></div>
+<nav class="nav-menu" 
+    #navMenuDesktop
+    data-transparent="true"
+    *ngIf="!isMobile; else mobile">
+    <div class="bg" #navMenuBg></div>
 
     <p class="nav-menu-logo">BASIC/TRVL<span>®</span></p>
     <ul class="nav-menu-list">
@@ -17,3 +20,33 @@
 <div *ngIf="seeProjects" class="projects">
     <app-projects-menu (closeProjectsList)="toggleProjectsList($event)"></app-projects-menu>
 </div>
+
+<ng-template #mobile>
+    <nav class="nav-menu-mobile" 
+     #navMenuMobile
+     data-transparent="true">
+        <div class="bg" #navMenuBg></div>
+
+        <p class="nav-menu-mobile-logo">BASIC/TRVL<span>®</span></p>
+        <p class="nav-menu-mobile-btn" (click)="toggleLinkList()">MENU</p>
+
+        <div class="nav-menu-mobile-list" #menuMobileLinkList>
+            <header>
+                <p class="nav-menu-mobile-logo">BASIC/TRVL<span>®</span></p>
+                <div class="cross-btn">
+                    <svg class="cross" (click)="toggleLinkList()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
+                </div>   
+            </header>
+           
+
+            <ul class="nav-menu-mobile-links">
+                <li>ABOUT</li>
+                <li>NEWS</li>
+                <li>IDEAS</li>
+                <li>CONTACT</li>
+            </ul>
+        </div>
+
+       
+    </nav>
+</ng-template>

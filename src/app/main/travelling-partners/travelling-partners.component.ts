@@ -23,7 +23,9 @@ export class TravellingPartnersComponent implements OnInit {
     let translate = 0;
 
 
-
+    sliderContainer.ontouchmove = e => {
+      console.log(e)
+    }
     sliderContainer.onmousedown = e => {
       let actualX = e.clientX;
       this.listenMouse = true;

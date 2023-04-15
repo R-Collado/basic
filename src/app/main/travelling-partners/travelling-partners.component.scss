@@ -119,3 +119,11 @@
     }
     
 }
+
+@media (max-width: 1000px) {
+    
+    .travelling-partners .slider-container .slider {
+        flex-direction: column;
+        width: auto;
+    }
+}

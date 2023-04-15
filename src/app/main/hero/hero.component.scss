@@ -24,6 +24,8 @@
         display: grid;
         place-content: center;
         filter: blur(.4px);
+        pointer-events: none;
+        user-select: none;
 
 
         .outer-text {
@@ -32,6 +34,10 @@
             left: 50%;
             transform: translate(-50%, 0%);
             color: var(--clr-neutral-100);
+        }
+
+        .inner-text {
+            text-align: center;
         }
     }
 }

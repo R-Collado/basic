@@ -1,0 +1,18 @@
+<section id="about-component">
+    <section class="about-us">
+        <div class="value">
+            <h2 class="secondary-heading">WE LOVE CULTURAL VALUE</h2>
+        </div>
+        <div class="together">
+            <h2 class="secondary-heading">● TOGETHER WITH YOU</h2>
+            <p>BASIC/TRVL is a global agency that thrives at bringing experiences and people together. You will make your dreams come true — across the world </p>
+        </div>
+    </section>
+    
+    <section class="images">
+        <div *ngFor="let image of images">
+            <img [src]="image.src" class="place-img">
+            <p class="image-idx">{{ image.idx }}</p>
+        </div>
+    </section>
+</section>

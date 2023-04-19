@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { FooterComponent } from './footer/footer.component';
-import { ProjectsMenuComponent } from './projects-menu/projects-menu.component';
+import { TravelsMenuComponent } from './travels-menu/travels-menu.component';
 
 
 
@@ -10,7 +10,7 @@ import { ProjectsMenuComponent } from './projects-menu/projects-menu.component';
   declarations: [
     NavMenuComponent,
     FooterComponent,
-    ProjectsMenuComponent,
+    TravelsMenuComponent,
   ],
   imports: [
     CommonModule

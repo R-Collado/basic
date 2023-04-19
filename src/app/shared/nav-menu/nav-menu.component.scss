@@ -180,7 +180,13 @@
 
         &.active {
             opacity: 1;
+            z-index: 1000;  
         }
+    }
+
+    .nav-menu-mobile-btn {
+        z-index: 900;
+        cursor: pointer;
     }
 
     &[data-transparent="true"] {

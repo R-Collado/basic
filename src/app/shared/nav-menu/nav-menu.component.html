@@ -11,14 +11,14 @@
         <li>IDEAS</li>
         <li>CONTACT</li>
     </ul>
-    <div class="nav-menu-icon" (click)="toggleProjectsList()">
+    <div class="nav-menu-icon" (click)="toggleTravelsList()">
         <div class="nav-menu-icon-dot"></div>
         <div class="nav-menu-icon-dot"></div>
         <div class="nav-menu-icon-dot"></div>
     </div>
 </nav>
-<div *ngIf="seeProjects" class="projects">
-    <app-projects-menu (closeProjectsList)="toggleProjectsList($event)"></app-projects-menu>
+<div *ngIf="seeTravels" class="travels">
+    <app-travels-menu (closeTravelsList)="toggleTravelsList($event)"></app-travels-menu>
 </div>
 
 <ng-template #mobile>

@@ -8,7 +8,7 @@ import gsap from 'gsap';
 })
 export class NavMenuComponent implements OnInit, AfterViewInit {
   
-  seeProjects: boolean = false;
+  seeTravels: boolean = false;
   seeMobileMenu: boolean = false;
   isMobile!: boolean;
 
@@ -63,17 +63,17 @@ export class NavMenuComponent implements OnInit, AfterViewInit {
 
   isSafariBrowser = () => navigator.userAgent.indexOf('Safari') > -1 && navigator.userAgent.indexOf('Chrome') <= -1;
 
-  toggleProjectsList(isOpen: boolean = true): void {
+  toggleTravelsList(isOpen: boolean = true): void {
     
-    if (isOpen) this.showProjects();
-    else this.hideProjects();
+    if (isOpen) this.showTravels();
+    else this.hideTravels();
     
-    this.seeProjects = isOpen;
+    this.seeTravels = isOpen;
   }
 
-  showProjects(): void {
-    const projects = document.querySelector('.projects') as HTMLElement;
-    gsap.fromTo(projects, {
+  showTravels(): void {
+    const travels = document.querySelector('.travels') as HTMLElement;
+    gsap.fromTo(travels, {
       opacity: 0
     }, {
       opacity: 1,
@@ -82,9 +82,9 @@ export class NavMenuComponent implements OnInit, AfterViewInit {
     })
   }
 
-  hideProjects(): void {
-    const projects = document.querySelector('.projects') as HTMLElement;
-    gsap.fromTo(projects, {
+  hideTravels(): void {
+    const travels = document.querySelector('.travels') as HTMLElement;
+    gsap.fromTo(travels, {
       opacity: 1
     }, {
       opacity: 0,
@@ -99,7 +99,6 @@ export class NavMenuComponent implements OnInit, AfterViewInit {
   }
 
   toggleLinkList(): void {
-    console.log('clicked')
     const mobileLinkList = this.menuMobileLinkList.nativeElement;
 
     mobileLinkList.classList.toggle('active');

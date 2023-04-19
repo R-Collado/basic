@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavMenuService } from '../shared/nav-menu/nav-menu.service';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(public navService: NavMenuService) { }
 
   ngOnInit(): void {
+    this.navService.toggleRootColors('light', true  );
   }
 
 }

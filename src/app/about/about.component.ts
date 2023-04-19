@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
+import { NavMenuService } from '../shared/nav-menu/nav-menu.service';
 
 @Component({
   selector: 'app-about',
@@ -28,13 +29,23 @@ export class AboutComponent implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor(public navService: NavMenuService) { }
 
   ngOnInit(): void {
-    const component = document.querySelector('#about-component') as HTMLElement;
     const headingFirstDiv = new SplitType('.value .secondary-heading').words;
     const textSecondDiv = new SplitType('.together h2, .together p').words;
+    const aboutComponent = document.querySelector('#about-component') as HTMLElement;
+    const oldColors = this.navService.toggleRootColors('dark', false);
 
+
+    gsap.fromTo(aboutComponent, {
+      background: oldColors?.bg,
+      color: oldColors?.fg
+    }, {
+      background: '#252422',
+      color: '#f9cdcd',
+      duration: 1 
+    })
 
     gsap.fromTo(headingFirstDiv, 
       { 

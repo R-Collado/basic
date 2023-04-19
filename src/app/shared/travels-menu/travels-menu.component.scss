@@ -71,11 +71,13 @@
             }
 
             .img {
-                width: 32.5rem;
-                height: 20rem;
+                width: 62.5rem;
+                height: 40rem;
                 overflow: hidden;
 
                 img {
+                    user-select: none;
+                    pointer-events: none;
                     transform: scale(1.1);
                     transition: transform 250ms ease-in;
                 }

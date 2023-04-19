@@ -11,6 +11,11 @@
     z-index: 999;
     background: var(--clr-neutral-100);
     overflow: hidden;
+
+    a {
+        color: var(--clr-neutral-900);
+        text-decoration: none;
+    }
     
     .nav-menu-logo {
         font-weight: 900;
@@ -107,6 +112,10 @@
 
         .nav-menu-icon .nav-menu-icon-dot, .nav-menu-list li::before {
             background-color: var(--clr-neutral-100);
+        }
+
+        a {
+            color: var(--clr-neutral-100);
         }
 
         .bg {

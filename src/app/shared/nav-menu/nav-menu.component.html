@@ -4,12 +4,12 @@
     *ngIf="!isMobile; else mobile">
     <div class="bg" #navMenuBg></div>
 
-    <p class="nav-menu-logo">BASIC/TRVL<span>®</span></p>
+    <a [routerLink]="['']" class="nav-menu-logo">BASIC/TRVL<span>®</span></a>
     <ul class="nav-menu-list">
-        <li>ABOUT</li>
-        <li>NEWS</li>
-        <li>IDEAS</li>
-        <li>CONTACT</li>
+        <li><a [routerLink]="['/about']">ABOUT</a></li>
+        <li><a [routerLink]="['/news']">NEWS</a></li>
+        <li><a [routerLink]="['/ideas']">IDEAS</a></li>
+        <li><a [routerLink]="['/contact']">CONTACT</a></li>
     </ul>
     <div class="nav-menu-icon" (click)="toggleTravelsList()">
         <div class="nav-menu-icon-dot"></div>

@@ -121,9 +121,19 @@
 }
 
 @media (max-width: 1000px) {
-    
-    .travelling-partners .slider-container .slider {
-        flex-direction: column;
-        width: auto;
+
+    .travelling-partners {
+
+        .slider-container {
+            .slider {
+                flex-direction: column;
+                width: auto;
+            }
+            
+            .slider-controller-outside, 
+            .cursor-primary-clr {
+                display: none;
+            }
+        }
     }
 }

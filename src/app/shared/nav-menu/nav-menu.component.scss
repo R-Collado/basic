@@ -189,6 +189,19 @@
         cursor: pointer;
     }
 
+    .bg-container {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        overflow: hidden;
+
+        .bg {
+            position: absolute;
+            height: 300%;
+        }
+    }
+
     &[data-transparent="true"] {
         color: var(--clr-neutral-100);
         background: transparent;

@@ -32,9 +32,9 @@ export class NavMenuComponent implements OnInit, AfterViewInit {
 
   
   loadEventListeners(): void {
-    const menu = this.navMenuDesktop.nativeElement;
 
     window.onwheel = e => {
+      const menu = document.querySelector('.nav-menu') as HTMLElement || document.querySelector('.nav-menu-mobile') as HTMLElement;
 
       if (e.deltaY > 0) {
         // scroll down
@@ -53,6 +53,35 @@ export class NavMenuComponent implements OnInit, AfterViewInit {
           duration: .25,
           ease: 'power1.in'
         });
+      }
+    }
+
+    window.ontouchstart = e => {
+      const startY = e.changedTouches[0].clientY;
+      const menu = document.querySelector('.nav-menu-mobile') as HTMLElement;
+
+      window.ontouchmove = e => {
+        let actualY = e.changedTouches[0].clientY;
+        const result = startY - actualY;
+
+        if (result > 0) {
+          // scroll down
+          gsap.to(menu, {
+            y: '-100%',
+            duration: .25,
+            ease: 'power1.in'
+          });
+          setTimeout(() => {
+            menu.dataset['transparent'] = 'false';
+          }, 500);
+        } else {
+          //scroll up
+          gsap.to(menu, {
+            y: '0',
+            duration: .25,
+            ease: 'power1.in'
+          });
+        }
       }
     }
 

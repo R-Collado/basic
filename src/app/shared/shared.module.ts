@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { TravelsMenuComponent } from './travels-menu/travels-menu.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,7 +14,8 @@ import { TravelsMenuComponent } from './travels-menu/travels-menu.component';
     TravelsMenuComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     NavMenuComponent,

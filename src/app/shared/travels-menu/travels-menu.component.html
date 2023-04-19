@@ -1,4 +1,4 @@
-<div class="projects">
+<div class="travels">
     <div class="top-side">
         <div class="dot"></div>
         <div>
@@ -6,11 +6,11 @@
             <p>©  c/o BASIC/TRVL</p>
         </div>
         <div>
-            <p>A COLLECTION OF INTERNAL PROJECT AND INITATIVES UNDER THE</p>
+            <p>A COLLECTION OF TRAVELS AND EXPERIENCES UNDER THE</p>
             <p>BASIC/TRVL BRAND.</p>
         </div>
 
-        <div class="cross-btn" (click)="toggleSeeProjects()">
+        <div class="cross-btn" (click)="toggleSeetravels()">
             <svg class="cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
         </div>
     </div>
@@ -19,20 +19,20 @@
         <div class="cursor-primary-clr" >
             <p>DRAG</p>
         </div>
-        <ul class="project-list">
-            <li class="project" *ngFor="let project of projects">
-                <p class="index">{{ project.idx }}</p>
+        <ul class="travel-list">
+            <li class="travel" *ngFor="let travel of travels">
+                <p class="index">{{ travel.idx }}</p>
                 <div class="img">
-                    <img [src]="project.img">
+                    <img [src]="travel.img">
                 </div>
                 <div class="text">
                     <header class="header">
-                        <p class="name">{{ project.name }}</p>
-                        <p class="year">c {{ project.year }}</p>
+                        <p class="name">{{ travel.name }}</p>
+                        <p class="year">c {{ travel.year }}</p>
                     </header>
-                    <p class="catchphrase">{{ project.catchphrase }}</p>
+                    <p class="catchphrase">{{ travel.catchphrase }}</p>
                     <p class="summary">
-                        {{ project.summary }}
+                        {{ travel.summary }}
                     </p>
                 </div>
             </li>

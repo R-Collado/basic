@@ -1,14 +1,13 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import gsap from 'gsap';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-projects-menu',
-  templateUrl: './projects-menu.component.html',
-  styleUrls: ['./projects-menu.component.scss']
+  selector: 'app-travels-menu',
+  templateUrl: './travels-menu.component.html',
+  styleUrls: ['./travels-menu.component.scss']
 })
-export class ProjectsMenuComponent implements OnInit {
-  @Output() closeProjectsList = new EventEmitter<boolean>();
-  projects = [
+export class TravelsMenuComponent implements OnInit {
+  @Output() closeTravelsList = new EventEmitter<boolean>();
+  travels = [
     {
       idx: '01',
       name: 'b/d jams',
@@ -52,15 +51,13 @@ export class ProjectsMenuComponent implements OnInit {
   ];
 
   listenMouse: boolean = false;
-
-
   constructor() { }
 
   ngOnInit(): void {
 
-    const cursor = document.querySelector('.projects .cursor-primary-clr') as HTMLElement;
+    const cursor = document.querySelector('.travels .cursor-primary-clr') as HTMLElement;
     const sliderContainer = document.querySelector('.slider-container') as HTMLElement;
-    const projectList = document.querySelector('.project-list') as HTMLElement;
+    const travelList = document.querySelector('.travel-list') as HTMLElement;
 
     let translate = 0;
 
@@ -70,9 +67,9 @@ export class ProjectsMenuComponent implements OnInit {
       this.listenMouse = true;
       cursor.classList.add('pressed');
 
-       projectList.onmousemove = e => {
+       travelList.onmousemove = e => {
         const movement = e.clientX;
-        const rect =  projectList.getBoundingClientRect();
+        const rect =  travelList.getBoundingClientRect();
 
         if(!this.listenMouse) return;
         
@@ -82,7 +79,7 @@ export class ProjectsMenuComponent implements OnInit {
         if (translate > 0 ) translate = 0;
         else if (translate < -75) translate = -75;
 
-        gsap.to(projectList, {
+        gsap.to(travelList, {
           xPercent: translate,
           duration: .5
         });
@@ -129,8 +126,8 @@ export class ProjectsMenuComponent implements OnInit {
 
   }
 
-  toggleSeeProjects(): void {
-    this.closeProjectsList.emit(false);
-  }
+  toggleSeetravels(): void {
+    this.closeTravelsList.emit(false);
+  } 
 
 }

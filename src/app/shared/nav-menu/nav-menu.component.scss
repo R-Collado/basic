@@ -1,3 +1,5 @@
+
+
 .nav-menu {
     position: fixed;
     top: 0;
@@ -116,6 +118,22 @@
 
         a {
             color: var(--clr-neutral-100);
+        }
+
+        .bg {
+            display: none;
+        }
+    }
+
+    &[data-transparent=true][data-main-component=false] {
+        background: transparent;
+
+        .nav-menu-icon .nav-menu-icon-dot, .nav-menu-list li::before {
+            background-color: var(--clr-neutral-900);
+        }
+
+        a {
+            color: var(--clr-neutral-900);
         }
 
         .bg {

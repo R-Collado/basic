@@ -1,7 +1,7 @@
 .footer {
     padding: 8rem 8rem;
-    background: var(--clr-neutral-900);
-    color: var(--clr-neutral-100);
+    background: #252422;
+    color: #f4f4f4;
 
     .higher {
         display: flex;
@@ -12,7 +12,7 @@
             width: 7rem;
 
             path {
-                fill: var(--clr-neutral-100);
+                fill: #f4f4f4;
             }
         }
 
@@ -34,9 +34,9 @@
 
         .email-input {
             background: transparent;
-            color: var(--clr-neutral-100);
+            color: #f4f4f4;
             border: 0;
-            border-bottom: 1px solid var(--clr-neutral-100);
+            border-bottom: 1px solid #f4f4f4;
             padding-bottom: 1.5rem;
             width: 40rem;
             outline: none;
@@ -46,7 +46,7 @@
             cursor: pointer;
             transform: translate(-100%, 20%);
             path {
-                fill: var(--clr-neutral-100);
+                fill: #f4f4f4;
             }
         }
         
@@ -64,7 +64,7 @@
                 width: 1rem;
                 aspect-ratio: 1 / 1;
                 border-radius: 50%;
-                background-color: var(--clr-neutral-100);
+                background-color: #f4f4f4;
                 transform: translateY(-50%);
             }
         }

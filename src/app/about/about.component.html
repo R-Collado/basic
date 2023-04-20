@@ -10,8 +10,8 @@
     </section>
     
     <section class="images">
-        <div *ngFor="let image of images">
-            <img [src]="image.src" class="place-img">
+        <div *ngFor="let image of images" class="image-container">
+            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="place-img">
             <p class="image-idx">{{ image.idx }}</p>
         </div>
     </section>

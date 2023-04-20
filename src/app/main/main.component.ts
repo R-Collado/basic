@@ -11,7 +11,7 @@ export class MainComponent implements OnInit {
   constructor(public navService: NavMenuService) { }
 
   ngOnInit(): void {
-    this.navService.toggleRootColors('light', true  );
+    this.navService.toggleRootColors('light', true);
   }
 
 }

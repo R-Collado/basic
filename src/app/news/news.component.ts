@@ -20,7 +20,7 @@ export class NewsComponent implements OnInit {
       color: oldColors?.fg
     }, {
       background: '#f4f4f4',
-      color: '#f9cdcd',
+      color: '#252422',
       duration: 1 
     })
   }

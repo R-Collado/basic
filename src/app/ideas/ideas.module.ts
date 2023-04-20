@@ -10,6 +10,9 @@ import { IdeasComponent } from './ideas.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    IdeasComponent
   ]
 })
 export class IdeasModule { }

@@ -10,6 +10,9 @@ import { NewsComponent } from './news.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    NewsComponent
   ]
 })
 export class NewsModule { }

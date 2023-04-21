@@ -22,10 +22,6 @@ export class TravellingPartnersComponent implements OnInit {
     const cursor = document.querySelector('.slider-container .cursor-primary-clr') as HTMLElement;
     let translate = 0;
 
-
-    sliderContainer.ontouchmove = e => {
-      console.log(e)
-    }
     sliderContainer.onmousedown = e => {
       let actualX = e.clientX;
       this.listenMouse = true;

@@ -15,17 +15,18 @@ export class NewsComponent implements OnInit {
     const newsComponent = document.querySelector('#news-component') as HTMLElement;
 
     setTimeout(() => {
-      const oldColors = this.navService.toggleRootColors('dark', false);
+      const oldColors = this.navService.toggleRootColors('light', false);
 
       gsap.fromTo(newsComponent, {
         background: oldColors?.bg,
         color: oldColors?.fg
       }, {
-        background: '#252422',
-        color: '#f9cdcd',
+        background: '#f4f4f4',
+        color: '#252422',
         duration: 1 
-      })
-    });
+      });
+    })
+    
   }
 
  

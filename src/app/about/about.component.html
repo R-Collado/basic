@@ -1,4 +1,6 @@
 <section id="about-component">
+    <div class="bg"></div>
+
     <section class="about-us">
         <div class="value">
             <h2 class="secondary-heading">WE LOVE CULTURAL VALUE</h2>
@@ -11,7 +13,7 @@
     
     <section class="images">
         <div *ngFor="let image of images" class="image-container">
-            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="place-img">
+            <img [src]=image.src class="place-img">
             <p class="image-idx">{{ image.idx }}</p>
         </div>
     </section>

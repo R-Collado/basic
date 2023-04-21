@@ -21,11 +21,14 @@ export class NavMenuComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    setTimeout(() => {
+      this.checkIfMobile();
+    }, 1);
   }
 
   ngAfterViewInit(): void {
     this.loadEventListeners();
-    this.checkIfMobile();
 
     if (this.isSafariBrowser()) this.navMenuBg.nativeElement.classList.add('safari_only');
   }
@@ -58,8 +61,7 @@ export class NavMenuComponent implements OnInit, AfterViewInit {
 
     window.ontouchstart = e => {
       const startY = e.changedTouches[0].clientY;
-      const menu = document.querySelector('.nav-menu-mobile') as HTMLElement;
-
+      const menu = document.querySelector('.nav-menu') as HTMLElement || document.querySelector('.nav-menu-mobile') as HTMLElement;
       window.ontouchmove = e => {
         let actualY = e.changedTouches[0].clientY;
         const result = startY - actualY;

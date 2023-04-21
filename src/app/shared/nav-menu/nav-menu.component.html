@@ -29,7 +29,7 @@
             <div class="bg" #navMenuBg></div>
         </div>
 
-        <p class="nav-menu-mobile-logo">BASIC/TRVL<span>®</span></p>
+        <a [routerLink]="['']" class="nav-menu-logo">BASIC/TRVL<span>®</span></a>
         <p class="nav-menu-mobile-btn" (click)="toggleLinkList()">MENU</p>
 
         <div class="nav-menu-mobile-list" #menuMobileLinkList>
@@ -42,10 +42,10 @@
            
 
             <ul class="nav-menu-mobile-links">
-                <li>ABOUT</li>
-                <li>NEWS</li>
-                <li>IDEAS</li>
-                <li>CONTACT</li>
+                <li><a [routerLink]="['/about']">ABOUT</a></li>
+                <li><a [routerLink]="['/news']">NEWS</a></li>
+                <li><a [routerLink]="['/ideas']">IDEAS</a></li>
+                <li><a [routerLink]="['/contact']">CONTACT</a></li>
             </ul>
         </div>
 

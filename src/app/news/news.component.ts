@@ -12,17 +12,20 @@ export class NewsComponent implements OnInit {
   constructor(public navService: NavMenuService) { }
 
   ngOnInit(): void {
-    const oldColors = this.navService.toggleRootColors('light', false);
     const newsComponent = document.querySelector('#news-component') as HTMLElement;
 
-    gsap.fromTo(newsComponent, {
-      background: oldColors?.bg,
-      color: oldColors?.fg
-    }, {
-      background: '#f4f4f4',
-      color: '#252422',
-      duration: 1 
-    })
+    setTimeout(() => {
+      const oldColors = this.navService.toggleRootColors('dark', false);
+
+      gsap.fromTo(newsComponent, {
+        background: oldColors?.bg,
+        color: oldColors?.fg
+      }, {
+        background: '#252422',
+        color: '#f9cdcd',
+        duration: 1 
+      })
+    });
   }
 
  

@@ -35,41 +35,45 @@ export class AboutComponent implements OnInit {
     const headingFirstDiv = new SplitType('.value .secondary-heading').words;
     const textSecondDiv = new SplitType('.together h2, .together p').words;
     const aboutComponent = document.querySelector('#about-component') as HTMLElement;
-    const oldColors = this.navService.toggleRootColors('dark', false);
+    
+    setTimeout(() => {
+      const oldColors = this.navService.toggleRootColors('dark', false);
 
+      gsap.fromTo(aboutComponent, {
+        background: oldColors?.bg,
+        color: oldColors?.fg
+      }, {
+        background: '#252422',
+        color: '#f9cdcd',
+        duration: 1 
+      })
+  
+      gsap.fromTo(headingFirstDiv, 
+        { 
+          y: 100,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 2,
+          ease: 'power4.out',
+        });
+      gsap.fromTo(textSecondDiv, 
+        { 
+          y: 100,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 3,
+          ease: 'power4.out',
+        });
+    }, 1);
 
-    gsap.fromTo(aboutComponent, {
-      background: oldColors?.bg,
-      color: oldColors?.fg
-    }, {
-      background: '#252422',
-      color: '#f9cdcd',
-      duration: 1 
-    })
-
-    gsap.fromTo(headingFirstDiv, 
-      { 
-        y: 100,
-        opacity: 0
-      },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-        duration: 2,
-        ease: 'power4.out',
-      });
-    gsap.fromTo(textSecondDiv, 
-      { 
-        y: 100,
-        opacity: 0
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 3,
-        ease: 'power4.out',
-      });
+  
   }
 
 }

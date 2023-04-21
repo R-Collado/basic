@@ -12,18 +12,20 @@ export class IdeasComponent implements OnInit {
   constructor(public navService: NavMenuService) { }
 
   ngOnInit(): void {
-    const aboutComponent = document.querySelector('#ideas-component') as HTMLElement;
+    const ideasComponent = document.querySelector('#ideas-component') as HTMLElement;
 
-    const oldColors = this.navService.toggleRootColors('dark', false);
-    
-    gsap.fromTo(aboutComponent, {
-      background: oldColors?.bg,
-      color: oldColors?.fg
-    }, {
-      background: '#252422',
-      color: '#f9cdcd',
-      duration: 1 
-    })
+    setTimeout(() => {
+      const oldColors = this.navService.toggleRootColors('dark', false);
+
+      gsap.fromTo(ideasComponent, {
+        background: oldColors?.bg,
+        color: oldColors?.fg
+      }, {
+        background: '#252422',
+        color: '#f9cdcd',
+        duration: 1 
+      })
+    });
   }
 
 }

@@ -95,22 +95,8 @@ export class NavMenuComponent implements OnInit, AfterViewInit {
   isSafariBrowser = () => navigator.userAgent.indexOf('Safari') > -1 && navigator.userAgent.indexOf('Chrome') <= -1;
 
   toggleTravelsList(isOpen: boolean = true): void {
-    
-    if (isOpen) this.showTravels();
-    else this.hideTravels();
-    
+      
     this.seeTravels = isOpen;
-  }
-
-  showTravels(): void {
-    const travels = document.querySelector('.travels') as HTMLElement;
-    gsap.fromTo(travels, {
-      opacity: 0
-    }, {
-      opacity: 1,
-      duration: .5,
-      ease: 'power1.in'
-    })
   }
 
   hideTravels(): void {

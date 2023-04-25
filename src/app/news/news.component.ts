@@ -9,6 +9,63 @@ import { gsap } from 'gsap';
 })
 export class NewsComponent implements OnInit {
 
+  radioBtns = [
+    {
+      id: 'view-all',
+      key: 'VIEW ALL',
+      value: 'all'
+    },
+    {
+      id: 'press',
+      key: 'PRESS',
+      value: 'press'
+    },
+    {
+      id: 'events',
+      key: 'EVENTS',
+      value: 'events'
+    },
+    {
+      id: 'awards',
+      key: 'AWARDS',
+      value: 'awards'
+    },
+    {
+      id: 'work',
+      key: 'WORK',
+      value: 'work'
+    }
+  ];
+
+  initialNews = [
+    {
+      title: 'BASIC/DEPT® secures 19 Nominations for the 27th Annual Webby Awards',
+      image: 'https://source.unsplash.com/random',
+      date: '3.13.23',
+      type: 'awards'
+    },
+    {
+      title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      image: 'https://source.unsplash.com/random',
+      date: '3.13.23',
+      type: 'work'
+    },
+    {
+      title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      image: 'https://source.unsplash.com/random',
+      date: '3.13.23',
+      type: 'events'
+    },
+    {
+      title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      image: 'https://source.unsplash.com/random',
+      date: '3.13.23',
+      type: 'press'
+    },
+  ];
+
+  news = this.initialNews;
+
   constructor(public navService: NavMenuService) { }
 
   ngOnInit(): void {
@@ -26,9 +83,14 @@ export class NewsComponent implements OnInit {
         duration: 1 
       });
     })
-    
   }
 
- 
-
+  filterNews(type: string): void {
+    if (type === 'all') {
+      this.news = this.initialNews;
+      return;
+    }
+    const filtered = this.initialNews.filter((value) => {return value.type === type});
+    this.news = filtered;
+  }
 }

@@ -1,1 +1,27 @@
 <section id="news-component">
+    <div class="bg"></div>
+    <header>
+        <h2>NEWS</h2>
+        <div class="dot"></div>
+    </header>
+
+    <ul class="radio-list">
+        <li *ngFor="let radio of radioBtns">
+            <input type="radio" class="radio-btn" [id]="radio.id" [value]="radio.value" name="value" (click)="filterNews(radio.value)">
+            <label [for]="radio.id">{{ radio.key }}</label>
+        </li>
+    </ul>
+
+
+    <section class="news">
+        <div class="new" *ngFor="let new of news">
+            <img [src]="new.image" class="new-image">
+            <div class="text">
+                <h4 class="new-title">{{ new.title }}</h4>
+                <p class="info"><span class="type">{{ new.type }}</span> <span class="date">{{ new.date }}</span></p>
+            </div>
+            <div class="right-arrow"></div>
+        </div>
+    </section>
+</section>
+

@@ -158,7 +158,7 @@
         color:var(--clr-neutral-900);
         text-decoration: none;
         cursor: pointer;
-        z-index: 9999;
+        z-index: 999;
     }
 
     .nav-menu-mobile-list {
@@ -173,6 +173,7 @@
         padding: 4rem 6rem;
         font-size: 3rem;
         font-weight: 600;
+        visibility: hidden;
         transition: opacity 250ms ease-in;
 
         header {
@@ -214,6 +215,8 @@
         &.active {
             opacity: 1;
             z-index: 1000;  
+            visibility: visible;
+
         }
     }
 

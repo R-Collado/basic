@@ -42,10 +42,10 @@
            
 
             <ul class="nav-menu-mobile-links">
-                <li><a [routerLink]="['/about']">ABOUT</a></li>
-                <li><a [routerLink]="['/news']">NEWS</a></li>
-                <li><a [routerLink]="['/ideas']">IDEAS</a></li>
-                <li><a [routerLink]="['/contact']">CONTACT</a></li>
+                <li><a [routerLink]="['/about']" (click)="toggleLinkList()">ABOUT</a></li>
+                <li><a [routerLink]="['/news']" (click)="toggleLinkList()">NEWS</a></li>
+                <li><a [routerLink]="['/ideas']" (click)="toggleLinkList()">IDEAS</a></li>
+                <li><a [routerLink]="['/contact']" (click)="toggleLinkList()">CONTACT</a></li>
             </ul>
         </div>
 

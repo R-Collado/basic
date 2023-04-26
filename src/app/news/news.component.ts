@@ -40,25 +40,25 @@ export class NewsComponent implements OnInit {
   initialNews = [
     {
       title: 'Record Numbers of Tourists Flock to See Cherry Blossoms in Kyoto',
-      image: 'https://source.unsplash.com/random',
+      image: 'assets/img/news-images/kyoto-cherry-blossom.jpg',
       date: '4.04.23',
-      type: 'events'
+      type: 'event'
     },
     {
       title: 'The Timeless Manor: does it deserve its reputation?',
-      image: 'https://source.unsplash.com/random',
+      image: 'assets/img/news-images/manor.jpg',
       date: '3.22.23',
       type: 'review'
     },
     {
       title: 'Cancelled flight? Here are your rights',
-      image: 'https://source.unsplash.com/random',
+      image: 'assets/img/news-images/flights.jpg',
       date: '3.03.23',
       type: 'advice'
     }, 
     {
       title: 'Sri Lanka travel guide: Everything to know before you go',
-      image: 'https://source.unsplash.com/random',
+      image: 'assets/img/news-images/sri-lanka.jpg',
       date: '2.24.23',
       type: 'guide'
     },

@@ -1,13 +1,16 @@
 <section id="news-component">
     <div class="bg"></div>
     <header>
-        <h2>NEWS</h2>
+        <div class="h2-container">
+            <h2>NEWS</h2>
+        </div>
+
         <div class="dot"></div>
     </header>
 
     <ul class="radio-list">
-        <li *ngFor="let radio of radioBtns">
-            <input type="radio" class="radio-btn" [id]="radio.id" [value]="radio.value" name="value" (click)="filterNews(radio.value)">
+        <li *ngFor="let radio of radioBtns"  (click)="filterNews(radio.value)">
+            <input type="radio" class="radio-btn" [id]="radio.id" [value]="radio.value" name="value">
             <label [for]="radio.id">{{ radio.key }}</label>
         </li>
     </ul>

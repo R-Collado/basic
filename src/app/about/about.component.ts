@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
 import { NavMenuService } from '../shared/nav-menu/nav-menu.service';
+import { CustomEase } from "gsap/CustomEase";
+
 
 @Component({
   selector: 'app-about',
@@ -34,10 +36,21 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
     const headingFirstDiv = new SplitType('.value .secondary-heading').words;
     const textSecondDiv = new SplitType('.together h2, .together p').words;
+
     const aboutComponent = document.querySelector('#about-component') as HTMLElement;
     
     setTimeout(() => {
       const oldColors = this.navService.toggleRootColors('dark', false);
+      const h2Words = document.querySelectorAll('.secondary-heading .words')
+
+      let easing = gsap.parseEase(".5, 0, 0, 1");
+
+      gsap.from(headingFirstDiv, { 
+        yPercent: 103,
+        stagger: 0.05,
+        duration: .5,
+        ease: easing
+      });
 
       gsap.fromTo(aboutComponent, {
         background: oldColors?.bg,
@@ -45,32 +58,22 @@ export class AboutComponent implements OnInit {
       }, {
         background: '#252422',
         color: '#f9cdcd',
-        duration: 1 
+        duration: 1,
       })
   
-      gsap.fromTo(headingFirstDiv, 
-        { 
-          y: 100,
-          opacity: 0
-        },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.1,
-          duration: 2,
-          ease: 'power4.out',
-        });
-      gsap.fromTo(textSecondDiv, 
-        { 
-          y: 100,
-          opacity: 0
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 3,
-          ease: 'power4.out',
-        });
+     
+
+    //   gsap.fromTo(textSecondDiv, 
+    //     { 
+    //       y: 100,
+    //       opacity: 0
+    //     },
+    //     {
+    //       y: 0,
+    //       opacity: 1,
+    //       duration: 3,
+    //       ease: 'power4.out',
+    //     });
     }, 1);
 
   

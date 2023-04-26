@@ -11,7 +11,8 @@
     }
 
     header {
-        font-size: 6rem;
+
+        font-size: 8.4rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -22,12 +23,32 @@
             border-radius: 50%;
             background-color: var(--clr-neutral-900);
         }
+
+        .h2-container {
+            width: max-content;
+            overflow: hidden;
+           
+            h2 {
+                line-height: 1;
+                animation: slide-text-up 750ms cubic-bezier(0.5,0,0,1) forwards;
+    
+                @keyframes slide-text-up {
+                    0% {
+                        transform: translateY(103%)
+                    }
+        
+                    to {
+                        transform: translateY(0)
+                    }
+                }
+            }
+        }       
     }
 
     .radio-list {
         display: flex;
         justify-content: flex-end;
-        margin-top: 15rem;
+        margin-top: 20rem;
         margin-bottom: 5rem;
         gap: 6rem;
         font-size: 1.4rem;
@@ -99,7 +120,6 @@
             }
 
             .text {
-                border: 1px solid red;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;

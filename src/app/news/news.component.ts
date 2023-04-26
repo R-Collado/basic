@@ -16,51 +16,51 @@ export class NewsComponent implements OnInit {
       value: 'all'
     },
     {
-      id: 'press',
-      key: 'PRESS',
-      value: 'press'
+      id: 'advice',
+      key: 'ADVICES',
+      value: 'advice'
     },
     {
-      id: 'events',
+      id: 'review',
+      key: 'REVIEWS',
+      value: 'review'
+    },
+    {
+      id: 'event',
       key: 'EVENTS',
-      value: 'events'
+      value: 'event'
     },
     {
-      id: 'awards',
-      key: 'AWARDS',
-      value: 'awards'
-    },
-    {
-      id: 'work',
-      key: 'WORK',
-      value: 'work'
+      id: 'guide',
+      key: 'GUIDES',
+      value: 'guide'
     }
   ];
 
   initialNews = [
     {
-      title: 'BASIC/DEPT® secures 19 Nominations for the 27th Annual Webby Awards',
+      title: 'Record Numbers of Tourists Flock to See Cherry Blossoms in Kyoto',
       image: 'https://source.unsplash.com/random',
-      date: '3.13.23',
-      type: 'awards'
-    },
-    {
-      title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-      image: 'https://source.unsplash.com/random',
-      date: '3.13.23',
-      type: 'work'
-    },
-    {
-      title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-      image: 'https://source.unsplash.com/random',
-      date: '3.13.23',
+      date: '4.04.23',
       type: 'events'
     },
     {
-      title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      title: 'The Timeless Manor: does it deserve its reputation?',
       image: 'https://source.unsplash.com/random',
-      date: '3.13.23',
-      type: 'press'
+      date: '3.22.23',
+      type: 'review'
+    },
+    {
+      title: 'Cancelled flight? Here are your rights',
+      image: 'https://source.unsplash.com/random',
+      date: '3.03.23',
+      type: 'advice'
+    }, 
+    {
+      title: 'Sri Lanka travel guide: Everything to know before you go',
+      image: 'https://source.unsplash.com/random',
+      date: '2.24.23',
+      type: 'guide'
     },
   ];
 

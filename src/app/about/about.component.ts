@@ -34,18 +34,26 @@ export class AboutComponent implements OnInit {
   constructor(public navService: NavMenuService) { }
 
   ngOnInit(): void {
-    const headingFirstDiv = new SplitType('.value .secondary-heading').words;
-    const textSecondDiv = new SplitType('.together h2, .together p').words;
+    const headingFirstDiv = new SplitType('.value .secondary-heading').lines;
+    const textSecondDiv = new SplitType('.together .secondary-heading').words;
 
     const aboutComponent = document.querySelector('#about-component') as HTMLElement;
+    const line = document.querySelectorAll('.line');
     
     setTimeout(() => {
       const oldColors = this.navService.toggleRootColors('dark', false);
-      const h2Words = document.querySelectorAll('.secondary-heading .words')
 
       let easing = gsap.parseEase(".5, 0, 0, 1");
 
-      gsap.from(headingFirstDiv, { 
+      
+      gsap.from(line, { 
+        yPercent: 103,
+        stagger: 0.05,
+        duration: .5,
+        ease: easing
+      });
+
+      gsap.from(textSecondDiv, { 
         yPercent: 103,
         stagger: 0.05,
         duration: .5,

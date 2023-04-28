@@ -99,8 +99,8 @@
             width: 1rem;
             opacity: 1;
         }
-        
-        li .radio-btn:checked::before {
+
+        li.active .radio-btn::before {
             width: 2rem;
             opacity: 1;
         }

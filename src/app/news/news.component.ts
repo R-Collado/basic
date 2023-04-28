@@ -9,6 +9,8 @@ import { gsap } from 'gsap';
 })
 export class NewsComponent implements OnInit {
 
+  btns!: NodeListOf<HTMLElement>;
+
   radioBtns = [
     {
       id: 'view-all',
@@ -73,6 +75,7 @@ export class NewsComponent implements OnInit {
 
     setTimeout(() => {
       const oldColors = this.navService.toggleRootColors('light', false);
+      this.btns = document.querySelectorAll('.radio-btn-li');
 
       gsap.fromTo(newsComponent, {
         background: oldColors?.bg,
@@ -85,7 +88,14 @@ export class NewsComponent implements OnInit {
     })
   }
 
-  filterNews(type: string): void {
+  filterNews(e: any, type: string): void {
+
+    this.btns.forEach(btn => {
+      btn.classList.remove('active')
+    });
+    
+    e.target.classList.add('active');
+
     if (type === 'all') {
       this.news = this.initialNews;
       return;

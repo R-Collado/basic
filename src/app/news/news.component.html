@@ -9,7 +9,7 @@
     </header>
 
     <ul class="radio-list">
-        <li *ngFor="let radio of radioBtns"  (click)="filterNews(radio.value)">
+        <li *ngFor="let radio of radioBtns" class="radio-btn-li" (click)="filterNews($event, radio.value)">
             <input type="radio" class="radio-btn" [id]="radio.id" [value]="radio.value" name="value">
             <label [for]="radio.id">{{ radio.key }}</label>
         </li>

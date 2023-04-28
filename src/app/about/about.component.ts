@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
 import { NavMenuService } from '../shared/nav-menu/nav-menu.service';
-import { CustomEase } from "gsap/CustomEase";
 
 
 @Component({
@@ -68,20 +67,6 @@ export class AboutComponent implements OnInit {
         color: '#f9cdcd',
         duration: 1,
       })
-  
-     
-
-    //   gsap.fromTo(textSecondDiv, 
-    //     { 
-    //       y: 100,
-    //       opacity: 0
-    //     },
-    //     {
-    //       y: 0,
-    //       opacity: 1,
-    //       duration: 3,
-    //       ease: 'power4.out',
-    //     });
     }, 1);
 
   

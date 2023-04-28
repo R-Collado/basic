@@ -3,7 +3,28 @@
     display: flex;
     gap: 2rem;
 
+    .bg {
+        z-index: 1;
+    }
+
     .image-container {
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+
+        #image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            overflow: hidden;
+
+            .bg {
+                position: absolute;
+            }
+        }
 
         .img {
             max-width: 50vw;

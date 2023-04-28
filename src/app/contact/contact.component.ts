@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavMenuService } from '../shared/nav-menu/nav-menu.service';
 import { gsap } from 'gsap';
+import SplitType from 'split-type';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +15,8 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
     const newsComponent = document.querySelector('#contact-component') as HTMLElement;
     const imageContainer = document.querySelector('.image-container') as HTMLElement;
-    const heading = document.querySelector('h2') as HTMLElement;
+    const imageOverlay = document.querySelector('#image-overlay') as HTMLElement;
+    const splitHeading = new SplitType('h2').words;
 
     setTimeout(() => {
       const oldColors = this.navService.toggleRootColors('light', false);
@@ -30,12 +32,29 @@ export class ContactComponent implements OnInit {
         duration: 1 
       });
 
-      gsap.from(heading, { 
+      gsap.from(splitHeading, { 
         yPercent: 103,
         stagger: 0.05,
         duration: .5,
         ease: easing
       });
+
+      gsap.fromTo(imageOverlay, {
+        background: oldColors?.bg
+      }, { 
+        background: '#f4f4f4',
+        duration: 1,
+        ease: easing
+      });
+      
+      gsap.fromTo(imageOverlay,{
+        y: 0
+      }, {
+        yPercent: -103,
+        delay: 1,
+        duration: .5,
+        ease: easing
+      })
     })
   }
 

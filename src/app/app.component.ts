@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,23 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     const bg = document.querySelector('.bg') as HTMLElement;
+    const lines = document.querySelectorAll('.line');
+    let easing = gsap.parseEase(".5, 0, 0, 1");
+
+    gsap.from('.lines-overlay', { 
+      yPercent: 103,
+      duration: .35,
+      delay: .5,
+      ease: easing
+    });
+
+    gsap.to('.loader', {
+      yPercent: -103,
+      duration: .75,
+      delay: 1,
+      ease: easing
+    });
+
     if (this.isSafariBrowser()) bg.classList.add('safari_only');
 
   }

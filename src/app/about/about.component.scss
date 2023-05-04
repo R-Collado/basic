@@ -24,6 +24,26 @@
             .line-container {
                 overflow: hidden;
             }
+
+            @media(max-width: 1775px) {
+                font-size: 10rem;
+            }
+
+            @media(max-width: 1600px) {
+                font-size: 9rem;
+            }
+            
+            @media(max-width: 1450px) {
+                font-size: 7rem;
+            }
+
+            @media(max-width: 1060px) {
+                font-size: 6rem;
+            }
+
+            @media(max-width: 540px) {
+                font-size: 3.5rem;
+            }
         }
 
        
@@ -35,7 +55,26 @@
                 font-size: 3.6rem;
                 max-width: 35ch;
 
+                @media(max-width: 1450px) {
+                    font-size: 2.5rem;
+                }
+
+                @media(max-width: 540px) {
+                    font-size: 2rem;
+                }
             }
+
+            @media(max-width: 1030px) {
+                padding-top: 5rem;
+            }
+        }
+
+        @media(max-width: 1550px) {
+            gap: 5rem;
+        }
+
+        @media(max-width: 1060px) {
+            flex-direction: column;
         }
     }
 
@@ -87,6 +126,49 @@
 
             &:hover {
                 z-index: 50;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .about-us {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .images {
+            min-height: none;
+
+
+            .image-container {
+
+                &:nth-of-type(1) {
+                    top: 0;
+                    left: 20%;
+                    z-index: 30;
+                }
+    
+                &:nth-of-type(2) {
+                    top: 20%;
+                    left: 30%;
+                    z-index: 40;
+                }
+    
+                &:nth-of-type(3) {
+                    top: 10%;
+                    left: 40%;
+                    z-index: 20;
+                }
+    
+                &:nth-of-type(4) {
+                    top: 30%;
+                    left: 50%;
+                    z-index: 10;
+                }
+    
+                &:hover {
+                    z-index: 50;
+                }
             }
         }
     }

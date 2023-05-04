@@ -208,4 +208,14 @@
             }
         }
     }
+
+    @media(max-width: 420px) {
+        header {
+            font-size: 3rem;
+
+            .dot {
+                width: 1.5rem;
+            }
+        }
+    }
 }

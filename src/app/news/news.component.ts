@@ -13,7 +13,7 @@ export class NewsComponent implements OnInit {
 
   radioBtns = [
     {
-      id: 'view-all',
+      id: 'all',
       key: 'VIEW ALL',
       value: 'all'
     },
@@ -72,6 +72,9 @@ export class NewsComponent implements OnInit {
 
   ngOnInit(): void {
     const newsComponent = document.querySelector('#news-component') as HTMLElement;
+    const viewAllBtn = document.querySelector('#view-all');
+    viewAllBtn?.classList.add('active');
+    console.log(viewAllBtn)
 
     setTimeout(() => {
       const oldColors = this.navService.toggleRootColors('light', false);
@@ -89,12 +92,14 @@ export class NewsComponent implements OnInit {
   }
 
   filterNews(e: any, type: string): void {
+    const btn = document.querySelector('#' + type)?.parentElement;
+    console.log(btn)
 
     this.btns.forEach(btn => {
       btn.classList.remove('active')
     });
-    
-    e.target.classList.add('active');
+  
+    btn?.classList.add('active');
 
     if (type === 'all') {
       this.news = this.initialNews;

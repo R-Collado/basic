@@ -26,6 +26,16 @@
             span {
                 font-size: 5rem;
             }
+
+            @media(max-width: 780px) {
+                font-size: 15rem;
+            }
+            @media(max-width: 600px) {
+                font-size: 10rem;
+            }
+            @media(max-width: 420px) {
+                font-size: 7.5rem;
+            }
         }
 
         .lines-overlay {
